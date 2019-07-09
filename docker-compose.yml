@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  db:
+    image: mariadb
+    restart: always
+    command: ['--character-set-server=utf8', '--collation-server=utf8_unicode_ci']
+    environment:
+      MYSQL_DATABASE: "docker"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: "docker-root"
   frontend:
     user: "${UID}:${GID}"
     build:
@@ -33,18 +42,15 @@ services:
       - PYTHONPATH=/opt/backend
       - DJANGO_SETTINGS_MODULE=api.settings
       - FRONTEND_PORT=${FRONTEND_PORT}
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=secret
-  db:
-    image: postgres:latest
-    restart: unless-stopped
-    volumes:
-      - pgdata:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=secret
-
-volumes:
-  pgdata:
+      - POSTGRES_DB=docker
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=docker-root
+  # db:
+  #   image: postgres:latest
+  #   restart: unless-stopped
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data/
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=secret
