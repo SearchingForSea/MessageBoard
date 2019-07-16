@@ -1,6 +1,6 @@
 # frontend
 
-> A Vue.js project
+> An inner vue project made for @Jisuanke Training by @XingyunXue
 
 ## Build Setup
 
