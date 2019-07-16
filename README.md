@@ -15,6 +15,12 @@ Django建表:
 Docker Createsuperuser:
   - `docker-compose run backend createsuperuser`
 
+添加如下信息到hosts
+```
+127.0.0.1 frontend.docker.io
+127.0.0.1 backend.docker.io
+127.0.0.1 production.docker.io
+```
 
 
 # 目录结构
@@ -29,9 +35,9 @@ Docker Createsuperuser:
     - 目录 `backend`: Django + DRF project.
     - 目录 `frontend`: Vuejs webpack project.   
    - 目录 `nginx`:
-    - 文件 `backend.conf`: 转发8000端口.
-    - 文件 `frontend_develop`: 转发8080端口.
-    - 文件 `frontend_production`: 挂载`npm run build`的文件.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         z
+    - 文件 `backend.conf`: 转发8000端口.  
+    - 文件 `frontend_develop`: 转发8080端口.  
+    - 文件 `frontend_production`: 挂载`npm run build`的文件.  
 
 # 关于后端
 
