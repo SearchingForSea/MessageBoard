@@ -22,7 +22,7 @@ COPY ./src/backend /opt/backend
 
 EXPOSE 8000
 ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+CMD ["runserver", "0.0.0.0:8000","bash","startup.sh"]
 
 # Uncomment to use Gunicorn
 # ENV GUNICORN_CMD_ARGS="--bind=0.0.0.0 --workers=3 --reload"
