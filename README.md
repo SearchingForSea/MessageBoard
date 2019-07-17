@@ -5,6 +5,8 @@
 
 
 # 使用流程
+第一次使用:
+  - `docker-compose up --build`
 开始使用容器:
   - `docker-compose up -d`
   - `docker-compose up`
@@ -35,7 +37,7 @@ Docker Createsuperuser:
     - 目录 `backend`: Django + DRF project.
     - 目录 `frontend`: Vuejs webpack project.   
    - 目录 `nginx`:
-    - 文件 `backend.conf`: 转发8000端口.  
+    - 文件 `backend.conf`: 转发8002端口.  
     - 文件 `frontend_develop`: 转发8080端口.  
     - 文件 `frontend_production`: 挂载`npm run build`的文件.  
 
