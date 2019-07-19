@@ -17,8 +17,8 @@ services:
       - HOST=0.0.0.0
       - PORT=${FRONTEND_PORT}
       - CHOKIDAR_USEPOLLING=true
-      - API_HOST=${BACKEND_RUNNING_ON}
-      - API_PORT=${BACKEND_PORT}
+      - API_HOST=backend.docker.io
+      - API_PORT=80
 
   backend:
     user: "${UID}:${GID}"

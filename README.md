@@ -6,9 +6,8 @@
 
 # 使用流程
 第一次使用:
-  - `docker-compose up --build`
+  - `docker-compose up build`
 开始使用容器:
-  - `docker-compose up -d`
   - `docker-compose up`
 
 Django建表:

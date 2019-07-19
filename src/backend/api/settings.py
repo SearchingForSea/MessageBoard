@@ -134,6 +134,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'localhost:%s' % os.getenv('FRONTEND_PORT')
-)
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = ['frontend.docker.io']
