@@ -14,7 +14,7 @@ Django建表:
   - `docker-compose run backend migrate`
 
 Docker Createsuperuser:
-  - `docker-compose exec -ti <对应container id> /bin/bash` 后 `django-admin createsuperuser`即可, container id 可以在用`docker ps`查询
+  - `docker exec -ti <对应container id> /bin/bash` 后 `django-admin createsuperuser`即可, container id 可以在用`docker ps`查询
 
 添加如下信息到hosts
 ```
