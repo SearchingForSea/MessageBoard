@@ -6,7 +6,7 @@
 
 # 使用流程
 第一次使用:
-  - `docker-compose up build`
+  - `docker-compose build` or `docker-compose up --build`
 开始使用容器:
   - `docker-compose up`
 
