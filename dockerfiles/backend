@@ -9,14 +9,14 @@ RUN apt-get update \
 # RUN apt-get install -y default-libmysqlclient-dev build-essential \
 #  &&  yum install mysql-devel
 
-RUN pip3 install pipenv
+RUN pip3 install pipenv -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 WORKDIR /opt/backend
 
 COPY Pipfile ./
 COPY Pipfile.lock ./
 RUN pipenv install --system
-RUN pip3 install psycopg2-binary gunicorn mysqlclient pymysql
+RUN pip3 install psycopg2-binary gunicorn mysqlclient pymysql -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
 COPY ./src/backend /opt/backend
 
