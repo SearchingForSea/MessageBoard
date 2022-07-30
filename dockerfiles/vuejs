@@ -8,13 +8,13 @@ RUN rm -rf /node_modules/*
 COPY ./src/frontend/ .
 
 # install project dependencies
-RUN npm install -g @vue/cli @vue/cli-init  --registry=https://registry.npmmirror.com/
-RUN npm install @vue/cli-service --registry=https://registry.npmmirror.com/
-
-RUN npm install --registry=https://registry.npmmirror.com/
+RUN npm install npm@latest --location=global  --registry=https://registry.npmmirror.com/
+RUN npm install @vue/cli @vue/cli-init --location=global  --registry=https://registry.npmmirror.com/
+RUN yarn add @vue/cli-service --registry=https://registry.npmmirror.com/
+RUN yarn install --registry=https://registry.npmmirror.com/
 EXPOSE 8080
 # COPY ./src/frontend/ .
 
-ENTRYPOINT ["npm", "run"]
+ENTRYPOINT ["yarn"]
 
 CMD ["serve"]

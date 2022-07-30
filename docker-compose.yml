@@ -38,16 +38,16 @@ services:
       - FRONTEND_PORT=${FRONTEND_PORT}
       - POSTGRES_DB=docker
       - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=docker-root
+      - POSTGRES_PASSWORD=uNAU7CjeXn3jaqg
   db:
     image: mariadb
     restart: always
     command: ['--character-set-server=utf8', '--collation-server=utf8_unicode_ci']
     environment:
-      MYSQL_DATABASE: "docker"
-      MYSQL_USER: "root"
-      MYSQL_PASSWORD: "root"
-      MYSQL_ROOT_PASSWORD: "docker-root"
+      MARIADB_DATABASE: "docker"
+      MARIADB_USER: "jsk-root"
+      MARIADB_PASSWORD: "uNAU7CjeXn3jaqg"
+      MARIADB_ROOT_PASSWORD: "Q8N69wQ2PrrAm4y"
   nginx:
     restart: always
     build: 
