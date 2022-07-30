@@ -6,13 +6,16 @@
 
 # 使用流程
 
-第一次使用:
+**第一次**使用容器编排启动前后端:
 
-- `docker-compose build`
+- `docker-compose up --build`
 
-开始使用容器:
+> 备注：如果在上述过程中，有前端 `vue-cli` 相关的报错，请在宿主机（也就是容器外）进入 `frontend` 目录，执行 `yarn install`（需要确保你自己本地已经装了 `yarn`）。之后再重复上面的步骤。
+
+**之后**使用容器编排启动前后端:
 
 - `docker-compose up`
+
 
 Django建表:
 
@@ -68,5 +71,5 @@ Docker `createsuperuser`:
   **Question: 如何运行 `django-admin`相关指令**
   
   **Answer:**
-  
+
    同上, `docker-compose run backend django-admin <options>`
