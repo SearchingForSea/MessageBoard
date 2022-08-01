@@ -36,9 +36,9 @@ services:
       - PYTHONPATH=/opt/backend
       - DJANGO_SETTINGS_MODULE=api.settings
       - FRONTEND_PORT=${FRONTEND_PORT}
-      - POSTGRES_DB=docker
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=uNAU7CjeXn3jaqg
+      # - POSTGRES_DB=docker
+      # - POSTGRES_USER=root
+      # - POSTGRES_PASSWORD=uNAU7CjeXn3jaqg
   db:
     image: mariadb
     restart: always
