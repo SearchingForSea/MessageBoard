@@ -23,5 +23,6 @@ urlpatterns = [
     path('loginUser/',views.loginUser),
     path('sendMessage/',views.sendMessage),
     path('getMessage/',views.getMessage),
+    path('getAddress/',views.getAddress),
     path('',include('message.urls'))
 ]

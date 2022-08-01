@@ -18,5 +18,12 @@ new Vue({
       mainUserAddress: ''
     }
   },
+  created: function () {
+    const params = new URLSearchParams()
+    params.append('user_address', this.mainUserAddress)
+    this.$http.post('http://localhost:8002/getAddress/', params).then((response) => {
+      this.mainUserAddress = response.data
+    })
+  },
   render: function (h) { return h(App) }
 }).$mount('#app')

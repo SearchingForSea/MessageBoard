@@ -44,6 +44,7 @@ def loginUser(request):
         user_secret1 = request.POST.get('user_secret', 'noposs')
         try:
             object = AddressSecret.objects.get(User_Address=user_address1)
+            GetMessage.objects.create(Comment_Bool=True,User_Address=user_address1,User_Comment="")
             secret=object.User_Secret
             if secret==user_secret1:
                 return HttpResponse("Yes")
@@ -69,7 +70,14 @@ def getMessage(request):
         data=serializers.serialize('json',talkcomment_reverse,ensure_ascii=False)
         return HttpResponse(data)
 
-    
+def getAddress(request):
+    if request.method=='POST':
+        try:
+            getUserAddress=GetMessage.objects.last()
+            data=getUserAddress.User_Address
+            return HttpResponse(data)
+        except:
+            return HttpResponse('')
 
 # def loginUser(request,user_address,user_secret):
 #    secret=AddressSecret.objects.filter(User_Address=user_address)

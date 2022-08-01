@@ -42,6 +42,11 @@ export default {
     this.$http.post('http://localhost:8002/getMessage/', params).then((response) => {
       this.CommentSpeech = response.data
     })
+    const param = new URLSearchParams()
+    params.append('user_address', this.mainUserAddress)
+    this.$http.post('http://localhost:8002/getAddress/', param).then((response) => {
+      this.User_Address = response.data
+    })
   },
   // watch: {
   //   IsSendMessageVision (newVal, oldVal) {
