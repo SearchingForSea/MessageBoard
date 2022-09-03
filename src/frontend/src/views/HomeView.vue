@@ -18,12 +18,14 @@
       <button class="send" @click="sendMessage">发表评论吧</button>
     </div>
     <send-message v-show="IsSendMessageVision" :not-send.sync="IsSendMessageVision" @refresh-windows="Refresh"></send-message>
+    <UserLogin v-show="false" @click-user-login="clickuserlogin"></UserLogin>
   </div>
 </template>
 
 <script>
 import CommentSpeech from '@/components/CommentSpeech.vue'
 import SendMessage from '@/components/SendMessage.vue'
+import UserLogin from './UserLogin.vue'
 
 export default {
   data () {
@@ -70,11 +72,15 @@ export default {
     Refresh () {
       console.log('haha')
       this.$router.go(0)
+    },
+    clickuserlogin (data) {
+      console.log('clickuserlogin')
     }
   },
   components: {
     CommentSpeech,
-    SendMessage
+    SendMessage,
+    UserLogin
   }
 }
 </script>

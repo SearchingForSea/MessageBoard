@@ -14,20 +14,7 @@ from django.http import JsonResponse
 from message import models
 from django.core import serializers
 
-
-# Create your views here.
-
-# class users_data_view(viewsets.ModelViewSet):
-#     queryset = AddressSecret.objects.all()
-#     serializer_class = addressSecret
-
 def registerUser(request):
-#    user_address = request.GET.get(user_address,'' )
-#    user_secret = request.GET.get(‘age’, 0)
-#    secret=AddressSecret.objects.filter(User_Address=user_address)
-#    if secret==user_secret:
-#    address=models.AddressSecret.objects.create(User_Address='1',User_Address='2')
-#    print(address)
     if request.method=='POST':
         user_address1 = request.POST.get('user_address', 'nouser')
         user_secret1 = request.POST.get('user_secret', 'noposs')
@@ -64,7 +51,7 @@ def sendMessage(request):
 def getMessage(request):
     if request.method=='POST':
         # talkcomment=PraiseTread.objects.all().values()
-        # return HttpResponse(talkcomment) 
+        # return HttpResponse(talkcomment)
         talkcomment=PraiseTread.objects.all()
         talkcomment_reverse=talkcomment[::-1]
         data=serializers.serialize('json',talkcomment_reverse,ensure_ascii=False)
@@ -79,25 +66,4 @@ def getAddress(request):
         except:
             return HttpResponse('')
 
-# def loginUser(request,user_address,user_secret):
-#    secret=AddressSecret.objects.filter(User_Address=user_address)
-#    if secret==user_secret:
-#        return HttpResponse('Yes')
-#    else: return HttpResponse('no')
-
-# def getPraiseTread(request,user_address):
-#     result=PraiseTread.objects.all()
-#     return result
-
-# def changPraise(request,user_address):
-#     user_message = PraiseTread.objects.get(User_Address=user_address)
-#     user_message.User_Comment_Praise='1'
-
-# def changTread(request,user_address):
-#     user_message = PraiseTread.objects.get(User_Address=user_address)
-#     user_message.User_Comment_Tread='1'
-
-# def sendMessage(requset,user_address,message):
-#     PraiseTread.objects.create(User_Address=user_address,User_Comment=message,
-#     User_Comment_Tread='0',User_Comment_Praise='0')
 

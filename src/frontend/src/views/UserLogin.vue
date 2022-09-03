@@ -32,6 +32,7 @@ export default {
   },
   methods: {
     Ilogin () {
+      this.$emit('click-user-login', this.inputAddress)
       const params = new URLSearchParams()
       if (this.inputAddress !== '' && this.inputSecret !== '') {
         params.append('user_address', this.inputAddress)
@@ -71,11 +72,13 @@ export default {
   align-items: center;
   justify-content: center;
   margin-top: -40px;
+  border-radius: 8px;
 }
 #loginboard {
   height: 400px;
   width: 400px;
   background-color: rgba(232, 160, 210, 0.297);
+  border-radius: 8px;
 }
 #pleaselogin {
   margin-top: 80px;
